@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "A new title",
+      "content": "this is a new thing  i have learned now",
+      "created At": "22/2/2022"
+    },
+    {
+      "id": 2,
+      "title": "A new title 2",
+      "content": "this is a new thing  i have learned now 2",
+      "created At": "22/2/20222"
+    },
+    {
+      "id": 3,
+      "title": "A new title 3",
+      "content": "this is a new thing  i have learned now 3",
+      "created At": "22/2/20223"
+    }
+  ]
+}
