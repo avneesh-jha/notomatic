@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "./components/header/Header";
+import { Header } from "./components/Header/Header";
 import { useEffect } from "react";
-import { NoteAPI } from "./assets/api/note-api";
+import { NoteAPI } from "./api/note-api";
 import { useDispatch } from "react-redux";
 import { setNoteList } from "./store/notes/notes-slice";
 
@@ -12,7 +12,6 @@ export function App() {
     console.log(noteslist);
     dispatch(setNoteList(noteslist));
   }
-
   useEffect(() => {
     fetchNoteList();
   }, []);
