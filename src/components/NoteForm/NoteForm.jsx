@@ -1,5 +1,6 @@
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 // import { Button } from "react-bootstrap/Button";
+import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
 import s from "./style.module.css";
 
 export function NoteForm({ title }) {
@@ -31,20 +32,20 @@ export function NoteForm({ title }) {
     </>
   );
   const submitBtn = (
-    <>
-      <button type="submit">submit</button>
-    </>
+    <div className={s.submit_btn}>
+      <ButtonPrimary>submit</ButtonPrimary>
+    </div>
   );
   return (
     <div className={s.container}>
       <div className="row justify-content-space-between">
         <div className="col-10">
-          <h2>{title}</h2>
+          <h2 className="mb-3">{title}</h2>
         </div>
         {actionIcons}
       </div>
-      <div>{titleInput}</div>
-      <div>{contentInput}</div>
+      <div className={`mb-3${s.title_input_container}`}>{titleInput}</div>
+      <div className="mb-3">{contentInput}</div>
       {submitBtn}
     </div>
   );
