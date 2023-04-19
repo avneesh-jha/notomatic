@@ -17,6 +17,18 @@
       "title": "A new title 3",
       "content": "this is a new thing  i have learned now 3",
       "created At": "22/2/20223"
+    },
+    {
+      "title": "hello this is a post",
+      "content": "Request",
+      "created_at": "4/19/2023",
+      "id": 4
+    },
+    {
+      "title": "okay now i am able toc",
+      "content": "reate notes",
+      "created_at": "4/19/2023",
+      "id": 5
     }
   ]
 }
