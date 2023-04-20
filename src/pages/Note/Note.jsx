@@ -22,9 +22,12 @@ export function Note() {
     setIsEditable(false);
   };
   const deleteNote = async (id) => {
-    await NoteAPI.deleteById(note.id);
-    alert("deleted");
-    navigate("/");
+    if (
+      window.confirm("are you sure want to delete this? it is irreversible")
+    ) {
+      await NoteAPI.deleteById(note.id);
+      navigate("/");
+    }
   };
   return (
     <div>
