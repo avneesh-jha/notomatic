@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { NoteForm } from "../../components/NoteForm/NoteForm";
 import { useState } from "react";
-import { updateNoteList } from "../../store/notes/notes-slice";
+import { deleteNoteList, setNoteList } from "../../store/notes/notes-slice";
 import { NoteAPI } from "../../api/note-api";
 
 export function Note() {
@@ -18,14 +18,15 @@ export function Note() {
   const dispatch = useDispatch();
   const submit = async (formValues) => {
     const updatedNote = await NoteAPI.updateById(note.id, formValues);
-    dispatch(updateNoteList(updatedNote));
+    dispatch(setNoteList(updatedNote));
     setIsEditable(false);
   };
-  const deleteNote = async (id) => {
+  const deleteNote = async () => {
     if (
       window.confirm("are you sure want to delete this? it is irreversible")
     ) {
-      await NoteAPI.deleteById(note.id);
+      NoteAPI.deleteById(note.id);
+      dispatch(deleteNoteList(note));
       navigate("/");
     }
   };

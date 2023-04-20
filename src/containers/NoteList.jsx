@@ -1,24 +1,35 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TextCard } from "../components/TextCard/TextCard";
 import s from "./style.module.css";
+import { NoteAPI } from "../api/note-api";
+import { deleteNoteList } from "../store/notes/notes-slice";
 
 export function NoteList() {
+  const dispatch = useDispatch();
   const noteList = useSelector((store) => store.noteSlice.noteList);
   const navigate = useNavigate();
+
+  const deleteNote = async (note) => {
+    if (
+      window.confirm("are you sure want to delete this? it is irreversible")
+    ) {
+      NoteAPI.deleteById(note.id);
+      dispatch(deleteNoteList(note));
+    }
+  };
 
   return (
     <div className="row justify-content-cneter">
       {noteList.map((note) => {
         return (
-          <div className={s.card_container}>
+          <div className={s.card_container} key={`{note.subtitle} {note.id}`}>
             <TextCard
-              key={note.title}
               title={note.title}
-              subtitle={note.created_at}
+              subtitle={note.subtitle}
               content={note.content}
               onClick={() => navigate("note/" + note.id)}
-              onClickTrash={() => alert("onClickTrash()")}
+              onClickTrash={() => deleteNote(note)}
             />
           </div>
         );
