@@ -1,10 +1,28 @@
 {
   "notes": [
     {
-      "title": "A new note is this",
-      "content": "okay now",
+      "title": "React Props",
+      "content": "renderPosts() {\n  this.removeToCollection = this.removeToCollection.bind(this);\n  return _.map(this.state.catalogue, (catalogue, key) => {\n    return (\n      <div className=\"item col-md-3\" key={key} id={key}>\n          <img src={this.state.catalogue[key].avatarURL} height={150} with={150}/>\n          <h3>{catalogue.marque}</h3>\n          <h4>{catalogue.numero}</h4>\n          <h4>{catalogue.reference}</h4>\n          <p>{catalogue.cote}</p>\n          <div className=\"text-center\">\n          <button className=\"btn btn-danger\" onClick={() => {if(window.confirm('Delete the item?')){this.removeToCollection(key, e)};}}>Supprimer</button>\n          </div>\n\n      </div>\n    )\n  })\n}",
       "created_at": "4/21/2023",
       "id": 1
+    },
+    {
+      "title": "Confirm in React",
+      "content": "This can be done using React Context. We can create a context provider that would manage the rendering of the Confirm Dialog and also expose a function that other components could “hook” into to use it.",
+      "created_at": "4/21/2023",
+      "id": 2
+    },
+    {
+      "title": "NPM Js",
+      "content": "Small library which makes your Dialog component callable. Latest version: 0.3.0-2, last published: a month ago. Start using react-confirm in ...",
+      "created_at": "4/21/2023",
+      "id": 3
+    },
+    {
+      "title": "GitHub",
+      "content": "Used as a repository for an org",
+      "created_at": "4/21/2023",
+      "id": 4
     }
   ]
 }
