@@ -8,7 +8,14 @@ export function NoteBrowse() {
 
   return (
     <div>
-      <SearchBar onTextChange={() => console.log("yes")} placeholder="" />
+      <div className="row justify-content-center mb-5">
+        <div className="col-sm-12 col-md-4">
+          <SearchBar
+            onTextChange={() => console.log("yes")}
+            placeholder="search the notes by title"
+          />
+        </div>
+      </div>
       {noteList?.length === 0 && (
         <div className="d-flex justify">
           <span>
