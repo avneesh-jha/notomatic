@@ -23,7 +23,7 @@ export function NoteList() {
     <div className="row justify-content-cneter">
       {noteList.map((note) => {
         return (
-          <div className={s.card_container} key={`{note.subtitle} {note.id}`}>
+          <div className={s.card_container} key={note.title + "" + note.id}>
             <TextCard
               title={note.title}
               subtitle={note.subtitle}
