@@ -1,4 +1,4 @@
-import { PencilFill, Textarea, TrashFill } from "react-bootstrap-icons";
+import { PencilFill, TrashFill } from "react-bootstrap-icons";
 // import { Button } from "react-bootstrap/Button";
 import { FieldError } from "../FieldError/FieldError";
 import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
@@ -16,8 +16,8 @@ const VALIDATOR = {
 export function NoteForm({ title, onCLickEdit, onClickDelete, onSubmit }) {
   const [formValues, setFormValues] = useState({ title: "", content: "" });
   const [formErrors, setFormErrors] = useState({
-    title: undefined,
-    content: undefined,
+    title: true,
+    content: true,
   });
 
   function onChangeFormValues(e) {
@@ -69,9 +69,22 @@ export function NoteForm({ title, onCLickEdit, onClickDelete, onSubmit }) {
       <FieldError msg={formErrors.content} />
     </div>
   );
+  const hasError = () => {
+    for (const fieldName in formErrors) {
+      if (formErrors[fieldName]) {
+        return true;
+      }
+    }
+    return false;
+  };
   const submitBtn = (
     <div className={s.submit_btn}>
-      <ButtonPrimary onClick={() => onSubmit(formValues)}>submit</ButtonPrimary>
+      <ButtonPrimary
+        isDisabled={hasError()}
+        onClick={() => onSubmit(formValues)}
+      >
+        submit
+      </ButtonPrimary>
     </div>
   );
   return (
