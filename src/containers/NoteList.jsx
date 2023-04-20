@@ -13,6 +13,7 @@ export function NoteList() {
         return (
           <div className={s.card_container}>
             <TextCard
+              key={note.title}
               title={note.title}
               subtitle={note.created_at}
               content={note.content}
