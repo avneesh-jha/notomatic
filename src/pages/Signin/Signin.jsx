@@ -1,6 +1,7 @@
 import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
 import { Link } from "react-router-dom";
 import s from "./style.module.css";
+import { Input } from "../../components/Input/Input";
 
 export function Signin() {
   const form = (
@@ -11,12 +12,19 @@ export function Signin() {
         to acces your notes
       </h2>
       <form className={s.formGroup}>
-        <input />
-        <input />
+        <Input
+          placeholder="Userid/Email"
+          onTextChange={() => console.log("yes")}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          onTextChange={() => console.log("yes")}
+        />
+
         <ButtonPrimary className={s.button}>Signin</ButtonPrimary>
         <span>
-          Don't have an account yet{}
-          <Link to="/signup"> Signup</Link>
+          Don't have an account yet <Link to="/signup">Signup</Link>
         </span>
       </form>
     </div>
