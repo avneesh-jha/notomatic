@@ -12,7 +12,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.formGroup > * {
+  margin: 10px;
+}
 .button {
   margin-top: 50px;
   width: 100%;

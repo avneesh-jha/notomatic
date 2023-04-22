@@ -34,7 +34,7 @@ export function NoteBrowse() {
           <span>
             {" "}
             there is no notes to be displayed{" "}
-            <Link to="note/new"> create a new one</Link>
+            <Link to="note/new">create a new one</Link>
           </span>
         </div>
       )}
