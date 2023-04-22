@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  height: 100%;
+}
+.header {
+  display: flex;
+}
+.logoTop {
+  fill: blue;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+}
+
+.logoTitle {
+}
+
+.leftSection {
+  flex: 4;
+}
+
+.rightSection {
+  flex: 5;
+  background-image: url("../../assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.logoRight {
+  height: 45px;
+  width: 45px;
+  vertical-align: baseline;
+}
+.backgroundText {
+  color: white;
+  margin: o;
+  text-align: center;
+  padding-top: 4px;
+}
