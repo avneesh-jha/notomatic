@@ -2,6 +2,7 @@ import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
 import { Link } from "react-router-dom";
 import s from "./style.module.css";
 import { Input } from "../../components/Input/Input";
+import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
 
 export function Signin() {
   const form = (
@@ -29,5 +30,5 @@ export function Signin() {
       </form>
     </div>
   );
-  return <div>{form}</div>;
+  return <AuthLayout>{form}</AuthLayout>;
 }
