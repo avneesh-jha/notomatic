@@ -18,11 +18,9 @@ export function AuthLayout({ children }) {
   );
   return (
     <div className={s.root}>
-      <div className={s.leftSection}>
-        {header}
-        {children}
-      </div>
-      <div className={s.rightSection}>{background}</div>
+      {header}
+      <div className={s.leftSection}>{children}</div>
+      <div className={`${s.rightSection} d-none d-lg-flex`}>{background}</div>
     </div>
   );
 }
