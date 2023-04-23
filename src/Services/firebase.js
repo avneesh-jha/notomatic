@@ -2,7 +2,7 @@ import { firebaseConfig } from "../config";
 import { initializeApp } from "firebase/app";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-export class firebaseApp {
+export class FirebaseApp {
   static firebaseApp = undefined;
   static auth = undefined;
   static init() {
