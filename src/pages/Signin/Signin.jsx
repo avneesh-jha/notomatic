@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import s from "./style.module.css";
 import { Input } from "../../components/Input/Input";
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
+import { useState } from "react";
 
 export function Signin() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const onSubmitButton = (e) => {
+    e.preventDefault();
+    console.log(email, password);
+  };
+
   const form = (
     <div className={s.formContainer}>
       <h2 className={s.title}>
@@ -12,18 +20,17 @@ export function Signin() {
         <br />
         to acces your notes
       </h2>
-      <form className={s.formGroup}>
-        <Input
-          placeholder="Userid/Email"
-          onTextChange={() => console.log("yes")}
-        />
+      <form onSubmit={onSubmitButton} className={s.formGroup}>
+        <Input placeholder="Userid/Email" onTextChange={setEmail} />
         <Input
           type="password"
           placeholder="Password"
-          onTextChange={() => console.log("yes")}
+          onTextChange={setPassword}
         />
 
-        <ButtonPrimary className={s.button}>Signin</ButtonPrimary>
+        <ButtonPrimary type="submit" className={s.button}>
+          Signin
+        </ButtonPrimary>
         <span>
           Don't have an account yet <Link to="/signup">Signup</Link>
         </span>
