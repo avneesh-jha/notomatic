@@ -11,7 +11,8 @@ import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { App } from "./App";
 import { Signin } from "./pages/Signin/Signin";
 import { Signup } from "./pages/Signup/Signup";
-
+import { firebaseApp } from "./Services/firebase";
+firebaseApp.init();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
