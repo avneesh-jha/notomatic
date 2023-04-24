@@ -4,13 +4,23 @@ import s from "./style.module.css";
 import { Input } from "../../components/Input/Input";
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AuthApi } from "../../api/auth";
+import { setUser } from "../../store/auth/auth-slice";
 
 export function Signin() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const onSubmitButton = (e) => {
+  const onSubmitButton = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    try {
+      const user = await AuthApi.signIn(email, password);
+      console.log(user);
+      dispatch(setUser(user));
+    } catch (err) {
+      console.log("Auth -Failed");
+    }
   };
 
   const form = (
