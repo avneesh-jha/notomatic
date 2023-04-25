@@ -14,11 +14,12 @@ export function Signin() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
   const onSubmitButton = async (e) => {
     e.preventDefault();
     try {
       const user = await AuthApi.signIn(email, password);
-      console.log(user);
+
       dispatch(setUser(user));
       await toast("success", "Logged In Successfully");
       navigate("/");
