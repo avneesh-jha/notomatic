@@ -1,5 +1,5 @@
 import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import s from "./style.module.css";
 import { Input } from "../../components/Input/Input";
 import { AuthLayout } from "../../layouts/AuthLayout/AuthLayout";
@@ -7,8 +7,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AuthApi } from "../../api/auth";
 import { setUser } from "../../store/auth/auth-slice";
+import { toast } from "../../Utils/sweet-alert";
 
 export function Signin() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -18,8 +20,11 @@ export function Signin() {
       const user = await AuthApi.signIn(email, password);
 
       dispatch(setUser(user));
+      await toast("success", "Logged In Successfully");
+      navigate("/");
     } catch (err) {
       console.log("Auth -Failed");
+      toast("error", err.message);
     }
   };
 
