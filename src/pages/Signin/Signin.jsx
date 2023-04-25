@@ -16,7 +16,7 @@ export function Signin() {
     e.preventDefault();
     try {
       const user = await AuthApi.signIn(email, password);
-      console.log(user);
+
       dispatch(setUser(user));
     } catch (err) {
       console.log("Auth -Failed");
