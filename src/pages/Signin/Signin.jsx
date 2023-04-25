@@ -18,7 +18,7 @@ export function Signin() {
     e.preventDefault();
     try {
       const user = await AuthApi.signIn(email, password);
-      console.log(user);
+
       dispatch(setUser(user));
       await toast("success", "Logged In Successfully");
       navigate("/");

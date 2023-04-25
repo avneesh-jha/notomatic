@@ -4,6 +4,7 @@ import { NoteForm } from "../../components/NoteForm/NoteForm";
 import { useState } from "react";
 import { deleteNoteList, setNoteList } from "../../store/notes/notes-slice";
 import { NoteAPI } from "../../api/note-api";
+import { withAuthRequired } from "../../hoc/withAuthRequired";
 
 export function Note() {
   const navigate = useNavigate();
@@ -45,3 +46,4 @@ export function Note() {
     </div>
   );
 }
+export const ProtectedNote = withAuthRequired(Note);

@@ -3,6 +3,7 @@ import { NoteAPI } from "../../api/note-api";
 import { useDispatch } from "react-redux";
 import { addNoteList } from "../../store/notes/notes-slice";
 import { useNavigate } from "react-router-dom";
+import { withAuthRequired } from "../../hoc/withAuthRequired";
 export function NoteCreate() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,3 +22,4 @@ export function NoteCreate() {
     </div>
   );
 }
+export const ProtectedNoteCreate = withAuthRequired(NoteCreate);
