@@ -4,7 +4,7 @@ import { FieldError } from "../FieldError/FieldError";
 import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
 import s from "./style.module.css";
 import { useState } from "react";
-import { ValidatorService } from "../../Services/validator";
+import { ValidatorService } from "../../Utils/validator";
 const VALIDATOR = {
   title: (value) => {
     return ValidatorService.min(value, 3) || ValidatorService.max(value, 20);
