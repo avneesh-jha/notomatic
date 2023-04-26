@@ -15,7 +15,7 @@ import {
 } from "redux-persist";
 
 const rootReducer = combineReducers({
-  notesSlice: notesReducer,
+  noteSlice: notesReducer,
   authSlice: authReducer,
 });
 

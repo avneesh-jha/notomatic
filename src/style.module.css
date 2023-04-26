@@ -1,3 +1,10 @@
 .workspace {
   padding: 35px;
 }
+
+.buttonAdd {
+  border-radius: 40%;
+  position: absolute;
+  bottom: 8%;
+  right: 10%;
+}
