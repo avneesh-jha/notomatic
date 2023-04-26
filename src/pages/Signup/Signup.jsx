@@ -1,4 +1,4 @@
-import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
+import { ButtonPrimary } from "../../components/buttonPrimary/ButtonPrimary";
 import { Link, useNavigate } from "react-router-dom";
 import s from "./style.module.css";
 import { Input } from "../../components/Input/Input";

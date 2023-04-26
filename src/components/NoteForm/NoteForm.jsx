@@ -1,7 +1,7 @@
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 // import { Button } from "react-bootstrap/Button";
 import { FieldError } from "../FieldError/FieldError";
-import { ButtonPrimary } from "../../components/ButtonPrimary/ButtonPrimary";
+import { ButtonPrimary } from "../../components/buttonPrimary/ButtonPrimary";
 import s from "./style.module.css";
 import { useState } from "react";
 import { ValidatorService } from "../../Utils/validator";
