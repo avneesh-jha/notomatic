@@ -4,4 +4,4 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Live Demo 
-[https://vercel.com/avneesh-jha/notomatic-live]
+[https://notomatic-live.vercel.app/signin]
